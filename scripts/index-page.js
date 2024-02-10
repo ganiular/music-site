@@ -51,10 +51,4 @@ const handleChange = (event) => {
 }
 
 formElm.addEventListener("submit", handleSubmit);
-
-
-
-const currentDate = new Date();
-const formattedDate = formatDate(currentDate);
-
-console.log(formattedDate); // Output: "09/02/2024" (example date, will change dynamically)
+formElm.addEventListener("change", handleChange);

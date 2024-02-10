@@ -1,18 +1,18 @@
 @font-face {
   font-family: "AvenirNextLTPro";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/Font/Alternative/AvenirNextLTPro.ttf") format("truetype");
+  src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/font/Alternative/AvenirNextLTPro.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "AvenirNextLTProBold";
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../assets/Font/Alternative/AvenirNextLTProBold.ttf") format("truetype");
+  src: url("../assets/font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../assets/font/Alternative/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "AvenirNextLTProDemi";
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../assets/Font/Alternative/AvenirNextLTProDemi.ttf") format("truetype");
+  src: url("../assets/font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../assets/font/Alternative/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -80,41 +80,43 @@ button:hover {
   background-color: #000000;
 }
 
-body > .header {
+.header {
   background-color: #323232;
-  padding: 24px 16px 0;
+  padding-top: 24px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-body > .header__logo {
+.header__logo > a {
   max-height: 20px;
   max-width: 120px;
 }
-
-.nav {
+.header__nav {
   display: flex;
   background-color: #323232;
   color: #ffffff;
+  width: 100%;
 }
-.nav__item {
+.header__nav__item {
   padding: 16px;
   display: block;
   width: 50%;
   text-align: center;
   box-sizing: border-box;
+  border-bottom: 4px solid #323232;
 }
-.nav__item:hover {
+.header__nav__item:hover {
   color: #E1E1E1;
 }
-.nav__item--active, .nav__item:active {
+.header__nav__item--active, .header__nav__item:active {
   font-family: "AvenirNextLTProBold", sans-serif;
-  border-bottom: 4px solid #ffffff;
+  border-bottom-color: #ffffff;
   color: #ffffff;
 }
 
 .hero {
-  background-image: url("/assets/Images/hero-bio.jpg");
+  background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
 }
 .hero__content {
@@ -153,6 +155,21 @@ body > .header__logo {
 .quote {
   font-family: "AvenirNextLTProDemi";
   font-size: 14px;
+}
+.quote span {
+  line-height: 32px;
+}
+
+.feeds {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .form__item {
@@ -250,4 +267,71 @@ body > .header__logo {
 .footer__logo {
   display: block;
   padding: 24px 0 16px 0;
-}/*# sourceMappingURL=style.css.map */
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .header {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 24px;
+    height: 15vh;
+  }
+  .header__logo {
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .header__nav {
+    padding: 0 24px;
+    width: auto;
+    height: 100%;
+  }
+  .header__nav > a {
+    padding: 24px 0 20px;
+    margin: 0 24px;
+    display: flex;
+    align-items: center;
+  }
+  .hero__content {
+    height: 85vh;
+  }
+  /* Define Typography*/
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  label,
+  button {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .block1,
+  .block2 {
+    padding: 48px 36px 36px;
+    gap: 36px;
+  }
+  .block1 > * {
+    margin: 0 64px;
+  }
+  .block1 > h2 {
+    margin: 0;
+  }
+  .feeds {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+  }
+}/*# sourceMappingURL=bio.css.map */

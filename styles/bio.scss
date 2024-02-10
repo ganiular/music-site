@@ -6,27 +6,31 @@ $secondary-color-light: #FAFAFA; // Alabaster
 $divider-color: #E1E1E1; // Mercury
 $on-primary-color: #ffffff; // White
 
+// Define metric
+$padding-size: 16px;
+$padding-size-big: 24px;
+
 // Define font faces
 @font-face {
     font-family: 'AvenirNextLTPro';
-    src: url('../assets/Font/AvenirNextLTPro-Regular.otf') format('opentype'),
-        url('../assets/Font/Alternative/AvenirNextLTPro.ttf') format('truetype');
+    src: url('../assets/font/AvenirNextLTPro-Regular.otf') format('opentype'),
+        url('../assets/font/Alternative/AvenirNextLTPro.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'AvenirNextLTProBold';
-    src: url('../assets/Font/AvenirNextLTPro-Bold.otf') format('opentype'),
-        url('../assets/Font/Alternative/AvenirNextLTProBold.ttf') format('truetype');
+    src: url('../assets/font/AvenirNextLTPro-Bold.otf') format('opentype'),
+        url('../assets/font/Alternative/AvenirNextLTProBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'AvenirNextLTProDemi';
-    src: url('../assets/Font/AvenirNextLTPro-Demi.otf') format('opentype'),
-        url('../assets/Font/Alternative/AvenirNextLTProDemi.ttf') format('truetype');
+    src: url('../assets/font/AvenirNextLTPro-Demi.otf') format('opentype'),
+        url('../assets/font/Alternative/AvenirNextLTProDemi.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
@@ -97,47 +101,52 @@ button {
 }
 
 
-body>.header {
+.header {
     background-color: $primary-color;
-    padding: 24px 16px 0;
+    padding-top: 24px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    &__logo {
+    &__logo>a {
         max-height: 20px;
         max-width: 120px;
     }
-}
 
+    &__nav {
+        display: flex;
+        background-color: $primary-color;
+        color: $on-primary-color;
+        width: 100%;
 
-.nav {
-    display: flex;
-    background-color: $primary-color;
-    color: $on-primary-color;
+        &__item {
+            padding: 16px;
+            display: block;
+            width: 50%;
+            text-align: center;
+            box-sizing: border-box;
+            border-bottom: 4px solid $primary-color;
 
-    &__item {
-        padding: 16px;
-        display: block;
-        width: 50%;
-        text-align: center;
-        box-sizing: border-box;
+            &:hover {
+                color: $divider-color;
+            }
 
-        &:hover {
-            color: $divider-color;
-        }
-
-        &--active,
-        &:active {
-            font-family: 'AvenirNextLTProBold', sans-serif;
-            border-bottom: 4px solid $on-primary-color;
-            color: $on-primary-color;
+            &--active,
+            &:active {
+                font-family: 'AvenirNextLTProBold', sans-serif;
+                border-bottom-color: $on-primary-color;
+                color: $on-primary-color;
+            }
         }
     }
 }
 
+
+
+
 .hero {
-    background-image: url('/assets/Images/hero-bio.jpg');
+    background-image: url('../assets/images/hero-bio.jpg');
     background-size: cover;
 
     &__content {
@@ -165,10 +174,10 @@ body>.header {
 
 .block1,
 .block2 {
-    padding: 24px 16px 16px;
+    padding: $padding-size-big $padding-size $padding-size;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: $padding-size;
 }
 
 .block2 {
@@ -178,6 +187,22 @@ body>.header {
 .quote {
     font-family: 'AvenirNextLTProDemi';
     font-size: 14px;
+
+    span {
+        line-height: 32px;
+    }
+}
+
+.feeds {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: $padding-size;
 }
 
 .form {
@@ -305,7 +330,92 @@ body>.header {
 @media (min-width: 1280px) {}
 
 // Tablet (Medium screens, 768px to 1279px)
-@media (min-width: 768px) and (max-width: 1279px) {}
+@media (min-width: 768px) and (max-width: 1279px) {
+    $padding-size: 36px;
+    $padding-size-big: 48px;
+
+    .header {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 24px;
+        height: 15vh;
+
+        &__logo {
+            padding: 0 24px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        &__nav {
+            padding: 0 24px;
+            width: auto;
+            height: 100%;
+        }
+
+        &__nav>a {
+            padding: 24px 0 20px;
+            margin: 0 24px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .hero {
+        &__content {
+            height: 85vh;
+        }
+    }
+
+    /* Define Typography*/
+    h1 {
+        font-size: 60px;
+        line-height: 68px;
+    }
+
+    h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    label,
+    button {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .block1,
+    .block2 {
+        padding: 48px 36px 36px;
+        gap: 36px;
+    }
+
+    .block1>* {
+        margin: 0 64px;
+    }
+
+    .block1>h2 {
+        margin: 0;
+    }
+
+    .feeds {
+        display: flex;
+        flex-direction: row;
+        gap: 36px;
+    }
+
+    .gallery {}
+}
 
 // Mobile (Small screens, up to 767px)
 @media (max-width: 767px) {}
