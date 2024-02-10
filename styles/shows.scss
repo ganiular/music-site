@@ -1,0 +1,46 @@
+@import 'bio';
+
+.section {
+    padding: 24px 0 16px;
+
+    h2 {
+        padding: 16px;
+    }
+
+    .tickets {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .ticket {
+            padding: 0 16px;
+
+            .field {
+                padding: 8px 0;
+                font-size: 16px;
+                line-height: 20px;
+
+                .label {
+                    font-family: 'AvenirNextLTProBold', sans-serif;
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: $secondary-text-color;
+                }
+
+                .date {
+                    font-family: 'AvenirNextLTProDemi', sans-serif;
+                }
+            }
+
+            .action {
+                padding: 8px 0;
+
+                button {
+                    font-family: 'AvenirNextLTProDemi', sans-serif;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

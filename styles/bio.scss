@@ -1,7 +1,7 @@
 // Define color variables
 $primary-color: #323232; // BandSite-Black
 $secondary-color: #000000; // BandSite-DarkBlack
-$secondarty-text-color: #AFAFAF; // Silver
+$secondary-text-color: #AFAFAF; // Silver
 $secondary-color-light: #FAFAFA; // Alabaster
 $divider-color: #E1E1E1; // Mercury
 $on-primary-color: #ffffff; // White
@@ -85,7 +85,7 @@ button {
 }
 
 label {
-    color: $secondarty-text-color;
+    color: $secondary-text-color;
 }
 
 button {
@@ -122,7 +122,6 @@ button {
 
         .nav__item {
             padding: 16px;
-            display: block;
             width: 50%;
             text-align: center;
             box-sizing: border-box;
@@ -288,7 +287,7 @@ button {
                 padding-bottom: 8px;
 
                 .date {
-                    color: $secondarty-text-color;
+                    color: $secondary-text-color;
                     font-size: 13px;
                 }
             }
@@ -306,7 +305,7 @@ button {
     &__socials {
         display: flex;
         padding: 16px 0;
-        gap: 16px;
+        gap: 24px;
     }
 
     &__contact {
@@ -357,13 +356,13 @@ button {
             padding: 0 24px;
             width: auto;
             height: 100%;
-        }
 
-        &__nav>a {
-            padding: 24px 0 20px;
-            margin: 0 24px;
-            display: flex;
-            align-items: center;
+            .nav__item {
+                padding: 24px 0 20px;
+                margin: 0 24px;
+                display: flex;
+                align-items: center;
+            }
         }
     }
 
@@ -501,12 +500,6 @@ button {
 
         &__head>* {
             width: 30%;
-        }
-
-        &__socials {
-            display: flex;
-            padding: 16px 0;
-            gap: 16px;
         }
 
         &__contacts {

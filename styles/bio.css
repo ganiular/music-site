@@ -100,7 +100,6 @@ button:hover {
 }
 .header__nav .nav__item {
   padding: 16px;
-  display: block;
   width: 50%;
   text-align: center;
   box-sizing: border-box;
@@ -257,7 +256,7 @@ button:hover {
 .footer__socials {
   display: flex;
   padding: 16px 0;
-  gap: 16px;
+  gap: 24px;
 }
 .footer__contact h3 {
   padding-bottom: 16px;
@@ -292,7 +291,7 @@ button:hover {
     width: auto;
     height: 100%;
   }
-  .header__nav > a {
+  .header__nav .nav__item {
     padding: 24px 0 20px;
     margin: 0 24px;
     display: flex;
@@ -401,11 +400,6 @@ button:hover {
   }
   .footer__head > * {
     width: 30%;
-  }
-  .footer__socials {
-    display: flex;
-    padding: 16px 0;
-    gap: 16px;
   }
   .footer__contacts {
     display: flex;
