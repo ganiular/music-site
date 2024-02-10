@@ -303,22 +303,11 @@ button {
     background-color: $primary-color;
     padding: 24px 16px 16px;
 
-    &__head {
-        display: flex;
-    }
-
-    &__head>* {
-        width: 33.3%;
-    }
 
     &__socials {
         display: flex;
         padding: 16px 0;
         gap: 16px;
-    }
-
-    &__contacts {
-        display: flex;
     }
 
     &__contact {
@@ -339,7 +328,15 @@ button {
 }
 
 // Mobile (Small screens, up to 767px)
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .footer {
+        &__head {
+            &__logo {
+                display: none;
+            }
+        }
+    }
+}
 
 // Tablet (Medium screens, 768px to 1279px)
 @media screen and (min-width: 768px) {
@@ -485,13 +482,26 @@ button {
         }
     }
 
+    .comments {
+        gap: 36px;
+    }
+
     .footer {
         &__head {
             display: flex;
+            align-items: center;
+            padding-bottom: 36px;
+            justify-content: space-between;
+
+            &__logo {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
         }
 
         &__head>* {
-            width: 33.3%;
+            width: 30%;
         }
 
         &__socials {
@@ -502,12 +512,22 @@ button {
 
         &__contacts {
             display: flex;
+            justify-content: space-between;
         }
 
         &__contact {
-            width: 33.3%;
+            width: 30%;
+        }
+
+        &__copyright {
+            padding: 36px 0;
         }
     }
+
+    .footer>.footer__logo {
+        display: none;
+    }
+
 }
 
 // Desktop (Large screens, 1280px and up)

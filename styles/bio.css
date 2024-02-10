@@ -253,19 +253,10 @@ button:hover {
   background-color: #323232;
   padding: 24px 16px 16px;
 }
-.footer__head {
-  display: flex;
-}
-.footer__head > * {
-  width: 33.3%;
-}
 .footer__socials {
   display: flex;
   padding: 16px 0;
   gap: 16px;
-}
-.footer__contacts {
-  display: flex;
 }
 .footer__contact h3 {
   padding-bottom: 16px;
@@ -278,6 +269,11 @@ button:hover {
   padding: 24px 0 16px 0;
 }
 
+@media (max-width: 767px) {
+  .footer__head__logo {
+    display: none;
+  }
+}
 @media screen and (min-width: 768px) {
   .header {
     flex-direction: row;
@@ -389,11 +385,22 @@ button:hover {
   .submit__field button {
     width: 150px;
   }
+  .comments {
+    gap: 36px;
+  }
   .footer__head {
     display: flex;
+    align-items: center;
+    padding-bottom: 36px;
+    justify-content: space-between;
+  }
+  .footer__head__logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   .footer__head > * {
-    width: 33.3%;
+    width: 30%;
   }
   .footer__socials {
     display: flex;
@@ -402,8 +409,15 @@ button:hover {
   }
   .footer__contacts {
     display: flex;
+    justify-content: space-between;
   }
   .footer__contact {
-    width: 33.3%;
+    width: 30%;
+  }
+  .footer__copyright {
+    padding: 36px 0;
+  }
+  .footer > .footer__logo {
+    display: none;
   }
 }/*# sourceMappingURL=bio.css.map */
