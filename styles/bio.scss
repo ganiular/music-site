@@ -120,7 +120,7 @@ button {
         color: $on-primary-color;
         width: 100%;
 
-        &__item {
+        .nav__item {
             padding: 16px;
             display: block;
             width: 50%;
@@ -141,8 +141,6 @@ button {
         }
     }
 }
-
-
 
 
 .hero {
@@ -216,9 +214,27 @@ button {
             display: block;
             padding-left: calc(36px + 16px);
             padding-bottom: 16px;
+
+            textarea {
+                width: 100%;
+                border-radius: 4px;
+                padding: 12px;
+                border: 1px solid $divider-color;
+                outline: none;
+                resize: vertical;
+                background-color: $secondary-color-light;
+
+                &.input__state--error {
+                    border-color: #D22D2D;
+                }
+
+                &:focus {
+                    border-color: $primary-color;
+                }
+            }
         }
 
-        &__field {
+        .form__field {
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -241,23 +257,6 @@ button {
 
                 &.input__state--error {
                     border-color: #D22D2D !important;
-                }
-            }
-
-            textarea {
-                width: 100%;
-                border-radius: 4px;
-                padding: 12px;
-                border: 1px solid $divider-color;
-                outline: none;
-                background-color: $secondary-color-light;
-
-                &.input__state--error {
-                    border-color: #D22D2D;
-                }
-
-                &:focus {
-                    border-color: $primary-color;
                 }
             }
         }
@@ -319,21 +318,19 @@ button {
             padding: 16px 0;
         }
     }
-
-    &__logo {
-        display: block;
-        padding: 24px 0 16px 0;
-    }
-
 }
 
 // Mobile (Small screens, up to 767px)
 @media (max-width: 767px) {
     .footer {
         &__head {
-            &__logo {
+            .head__logo {
                 display: none;
             }
+        }
+
+        &__logo {
+            padding: 24px 0 16px 0;
         }
     }
 }
@@ -452,6 +449,10 @@ button {
                 display: block;
                 padding-left: calc(48px + 16px);
                 padding-bottom: 24px;
+
+                textarea {
+                    padding: 16px;
+                }
             }
 
             &__field {
@@ -466,9 +467,7 @@ button {
                     padding: 16px;
                 }
 
-                textarea {
-                    padding: 16px;
-                }
+
             }
         }
     }
@@ -493,7 +492,7 @@ button {
             padding-bottom: 36px;
             justify-content: space-between;
 
-            &__logo {
+            .head__logo {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;

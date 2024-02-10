@@ -98,7 +98,7 @@ button:hover {
   color: #ffffff;
   width: 100%;
 }
-.header__nav__item {
+.header__nav .nav__item {
   padding: 16px;
   display: block;
   width: 50%;
@@ -106,10 +106,10 @@ button:hover {
   box-sizing: border-box;
   border-bottom: 4px solid #323232;
 }
-.header__nav__item:hover {
+.header__nav .nav__item:hover {
   color: #E1E1E1;
 }
-.header__nav__item--active, .header__nav__item:active {
+.header__nav .nav__item--active, .header__nav .nav__item:active {
   font-family: "AvenirNextLTProBold", sans-serif;
   border-bottom-color: #ffffff;
   color: #ffffff;
@@ -183,13 +183,28 @@ button:hover {
   padding-left: 52px;
   padding-bottom: 16px;
 }
-.form__item__field {
+.form__item--padded textarea {
+  width: 100%;
+  border-radius: 4px;
+  padding: 12px;
+  border: 1px solid #E1E1E1;
+  outline: none;
+  resize: vertical;
+  background-color: #FAFAFA;
+}
+.form__item--padded textarea.input__state--error {
+  border-color: #D22D2D;
+}
+.form__item--padded textarea:focus {
+  border-color: #323232;
+}
+.form__item .form__field {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8;
 }
-.form__item__field input {
+.form__item .form__field input {
   width: 100%;
   height: 32px;
   border-radius: 4px;
@@ -198,25 +213,11 @@ button:hover {
   outline: none;
   background-color: #FAFAFA;
 }
-.form__item__field input:focus {
+.form__item .form__field input:focus {
   border-color: #323232;
 }
-.form__item__field input.input__state--error {
+.form__item .form__field input.input__state--error {
   border-color: #D22D2D !important;
-}
-.form__item__field textarea {
-  width: 100%;
-  border-radius: 4px;
-  padding: 12px;
-  border: 1px solid #E1E1E1;
-  outline: none;
-  background-color: #FAFAFA;
-}
-.form__item__field textarea.input__state--error {
-  border-color: #D22D2D;
-}
-.form__item__field textarea:focus {
-  border-color: #323232;
 }
 
 .divider {
@@ -264,14 +265,13 @@ button:hover {
 .footer__contact .email {
   padding: 16px 0;
 }
-.footer__logo {
-  display: block;
-  padding: 24px 0 16px 0;
-}
 
 @media (max-width: 767px) {
-  .footer__head__logo {
+  .footer__head .head__logo {
     display: none;
+  }
+  .footer__logo {
+    padding: 24px 0 16px 0;
   }
 }
 @media screen and (min-width: 768px) {
@@ -365,6 +365,9 @@ button:hover {
     padding-left: 64px;
     padding-bottom: 24px;
   }
+  .form__item--padded textarea {
+    padding: 16px;
+  }
   .form__item__field {
     width: 100%;
     display: flex;
@@ -373,9 +376,6 @@ button:hover {
   }
   .form__item__field input {
     height: 48px;
-    padding: 16px;
-  }
-  .form__item__field textarea {
     padding: 16px;
   }
   .submit__field {
@@ -394,7 +394,7 @@ button:hover {
     padding-bottom: 36px;
     justify-content: space-between;
   }
-  .footer__head__logo {
+  .footer__head .head__logo {
     display: flex;
     justify-content: flex-end;
     align-items: center;
