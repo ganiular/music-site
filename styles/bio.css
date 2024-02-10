@@ -253,10 +253,19 @@ button:hover {
   background-color: #323232;
   padding: 24px 16px 16px;
 }
+.footer__head {
+  display: flex;
+}
+.footer__head > * {
+  width: 33.3%;
+}
 .footer__socials {
   display: flex;
   padding: 16px 0;
   gap: 16px;
+}
+.footer__contacts {
+  display: flex;
 }
 .footer__contact h3 {
   padding-bottom: 16px;
@@ -269,7 +278,7 @@ button:hover {
   padding: 24px 0 16px 0;
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
   .header {
     flex-direction: row;
     justify-content: flex-start;
@@ -379,5 +388,22 @@ button:hover {
   }
   .submit__field button {
     width: 150px;
+  }
+  .footer__head {
+    display: flex;
+  }
+  .footer__head > * {
+    width: 33.3%;
+  }
+  .footer__socials {
+    display: flex;
+    padding: 16px 0;
+    gap: 16px;
+  }
+  .footer__contacts {
+    display: flex;
+  }
+  .footer__contact {
+    width: 33.3%;
   }
 }/*# sourceMappingURL=bio.css.map */

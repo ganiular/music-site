@@ -303,10 +303,22 @@ button {
     background-color: $primary-color;
     padding: 24px 16px 16px;
 
+    &__head {
+        display: flex;
+    }
+
+    &__head>* {
+        width: 33.3%;
+    }
+
     &__socials {
         display: flex;
         padding: 16px 0;
         gap: 16px;
+    }
+
+    &__contacts {
+        display: flex;
     }
 
     &__contact {
@@ -326,11 +338,11 @@ button {
 
 }
 
-// Desktop (Large screens, 1280px and up)
-@media (min-width: 1280px) {}
+// Mobile (Small screens, up to 767px)
+@media (max-width: 767px) {}
 
 // Tablet (Medium screens, 768px to 1279px)
-@media (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
     $padding-size: 36px;
     $padding-size-big: 48px;
 
@@ -472,7 +484,31 @@ button {
             width: 150px;
         }
     }
+
+    .footer {
+        &__head {
+            display: flex;
+        }
+
+        &__head>* {
+            width: 33.3%;
+        }
+
+        &__socials {
+            display: flex;
+            padding: 16px 0;
+            gap: 16px;
+        }
+
+        &__contacts {
+            display: flex;
+        }
+
+        &__contact {
+            width: 33.3%;
+        }
+    }
 }
 
-// Mobile (Small screens, up to 767px)
-@media (max-width: 767px) {}
+// Desktop (Large screens, 1280px and up)
+@media (min-width: 1280px) {}
