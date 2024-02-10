@@ -80,15 +80,14 @@ button:hover {
   background-color: #000000;
 }
 
-.header {
+body > .header {
   background-color: #323232;
-  padding: 24px 16px 16px;
+  padding: 24px 16px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.header--logo {
+body > .header__logo {
   max-height: 20px;
   max-width: 120px;
 }
@@ -98,17 +97,17 @@ button:hover {
   background-color: #323232;
   color: #ffffff;
 }
-.nav--item {
+.nav__item {
   padding: 16px;
   display: block;
   width: 50%;
   text-align: center;
   box-sizing: border-box;
 }
-.nav--item:hover {
+.nav__item:hover {
   color: #E1E1E1;
 }
-.nav--item-active, .nav--item:active {
+.nav__item-active, .nav__item:active {
   font-family: "AvenirNextLTProBold", sans-serif;
   border-bottom: 4px solid #ffffff;
   color: #ffffff;
@@ -118,17 +117,19 @@ button:hover {
   background-image: url("/assets/Images/hero-bio.jpg");
   background-size: cover;
 }
-.hero--content {
+.hero__content {
   display: flex;
   align-items: center;
   color: #ffffff;
   padding: 16px;
-  height: 240px;
+  width: 100%;
+  height: 40vh;
   background-color: rgba(50, 50, 50, 0.5);
 }
 
-.profile--image-small {
-  width: 36px;
+.profile__image-small {
+  min-width: 36px;
+  min-height: 36px;
   height: 36px;
   border-radius: 50%;
   background-color: #E1E1E1;
@@ -148,24 +149,29 @@ button:hover {
   background-color: #FAFAFA;
 }
 
-.form--item {
+.quote {
+  font-family: "AvenirNextLTProDemi";
+  font-size: 14px;
+}
+
+.form__item {
   display: flex;
   align-items: flex-end;
   gap: 16px;
   padding-bottom: 16px;
 }
-.form--item-padded {
+.form__item-padded {
   display: block;
   padding-left: 52px;
   padding-bottom: 16px;
 }
-.form--item--field {
+.form__item__field {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8;
 }
-.form--item--field input {
+.form__item__field input {
   width: 100%;
   height: 32px;
   border-radius: 4px;
@@ -174,13 +180,13 @@ button:hover {
   outline: none;
   background-color: #FAFAFA;
 }
-.form--item--field input .input--state-error {
+.form__item__field input .input__state-error {
   border-color: #D22D2D;
 }
-.form--item--field input:focus {
+.form__item__field input:focus {
   border-color: #323232;
 }
-.form--item--field textarea {
+.form__item__field textarea {
   width: 100%;
   border-radius: 4px;
   padding: 14px;
@@ -188,14 +194,59 @@ button:hover {
   outline: none;
   background-color: #FAFAFA;
 }
-.form--item--field textarea .input--state-error {
+.form__item__field textarea .input__state-error {
   border-color: #D22D2D;
 }
-.form--item--field textarea:focus {
+.form__item__field textarea:focus {
   border-color: #323232;
 }
 
 .divider {
   background-color: #E1E1E1;
   height: 1px;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.comments__item {
+  display: flex;
+  gap: 16px;
+}
+.comments__item .context {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.comments__item .context .head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+}
+.comments__item .context .head .date {
+  color: #AFAFAF;
+  font-size: 13px;
+}
+
+footer {
+  color: #ffffff;
+  background-color: #323232;
+  padding: 24px 16px 16px;
+}
+footer__socials {
+  display: flex;
+  padding: 16px 0;
+  gap: 16px;
+}
+footer__contact h3 {
+  padding-bottom: 16px;
+}
+footer__contact .email {
+  padding: 16px 0;
+}
+footer__logo {
+  display: block;
+  padding: 24px 0 16px 0;
 }/*# sourceMappingURL=style.css.map */

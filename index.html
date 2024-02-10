@@ -10,14 +10,14 @@
 
 <body>
     <div class="header">
-        <div class="header--logo"><img src="/assets/Logo/Logo-bandsite.svg" alt=""></div>
+        <div class="header__logo"><a href="#"><img src="/assets/Logo/Logo-bandsite.svg" alt="logo"></a></div>
     </div>
     <nav class="nav">
-        <a href="#" class="nav--item nav--item-active">Biography</a>
-        <a href="#" class="nav--item">Shows</a>
+        <a href="#" class="nav__item nav__item-active">Biography</a>
+        <a href="#" class="nav__item">Shows</a>
     </nav>
     <div class="hero">
-        <div class="hero--content">
+        <div class="hero__content">
             <h1>The Bee Knees</h1>
         </div>
     </div>
@@ -25,7 +25,8 @@
         <div class="block1">
             <h1>About the Musicians</h1>
             <img src="/assets/Images/band.jpg" alt="" width="100%">
-            <p>“We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back
+            <p class="quote">“We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to
+                be better, back
                 to
                 the drawing board’”<br>
                 <span style="line-height: 32px;">- Lead vocalist of The Bees Knees</span>
@@ -64,28 +65,100 @@
         <div class="block1">
             <h1>Join the Conversation</h1>
             <form class="form" action="" method="post">
-                <div class="form--item">
-                    <img class="profile--image-small" src="/assets/Images/Mohan-muruge.jpg" alt="">
-                    <div class="form--item--field">
+                <div class="form__item">
+                    <img class="profile__image-small" src="/assets/Images/Mohan-muruge.jpg" alt="">
+                    <div class="form__item__field">
                         <label for="name">NAME</label>
                         <input type="text" placeholder="Enter your name" name="name" id="name">
                     </div>
                 </div>
-                <div class="form--item-padded">
-                    <div class="form--item--field">
+                <div class="form__item-padded">
+                    <div class="form__item__field">
                         <label for="comment">COMMENT</label>
                         <textarea name="comment" id="comment" cols="30" rows="5"
                             placeholder="Add a new comment"></textarea>
                     </div>
                 </div>
-                <div class="form--item-padded">
+                <div class="form__item-padded">
                     <button type="submit">COMMENT</button>
                 </div>
 
             </form>
             <div class="divider"></div>
+            <div class="comments">
+                <div class="comments__item">
+                    <div class="profile__image-small"></div>
+                    <div class="context">
+                        <div class="head">
+                            <h3 class="name">Victor Pinto</h3>
+                            <div class="date">11/02/2023</div>
+                        </div>
+                        <p class="body">This is art. This is inexplicable magic expressed in the purest way,
+                            everything that makes up this majestic work deserves reverence. Let us appreciate this
+                            for what it is and what it contains.</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="comments__item">
+                    <div class="profile__image-small"></div>
+                    <div class="context">
+                        <div class="head">
+                            <div class="name">Christina Cabrera</div>
+                            <div class="date">10/28/2023</div>
+                        </div>
+                        <p class="body">I feel blessed to have seen them in person. What a show! They were just
+                            perfection. If there was one day of my life I could relive, this would be it. What an
+                            incredible day.</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="comments__item">
+                    <div class="profile__image-small"></div>
+                    <div class="context">
+                        <div class="head">
+                            <div class="name">Isaac Tadesse</div>
+                            <div class="date">10/20/2023</div>
+                        </div>
+                        <p class="body">I can't stop listening. Every time I hear one of their songs - the vocals -
+                            it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of
+                            creativity. Can't get enough.</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div>
         </div>
     </main>
+    <footer>
+        <h1>Get In Touch</h1>
+        <div class="footer__socials">
+            <a href="#"><img src="/assets/Icons/SVG/Icon-instagram.svg" alt=""></a>
+            <a href="#"><img src="/assets/Icons/SVG/Icon-facebook.svg" alt=""></a>
+            <a href="#"><img src="/assets/Icons/SVG/Icon-twitter.svg" alt=""></a>
+        </div>
+        <div class="footer__contact">
+            <h3>The Bees Knees Management</h3>
+            <p>503 Broadway Penthouse,<br>
+                New York, NY 10012, USA</p>
+            <p class="email">info@thebeesknees.com</p>
+        </div>
+
+        <div class="footer__contact">
+            <h3>Limitless Artist Group</h3>
+            <p>Booking Agent for<br>
+                US / South America / Japan</p>
+            <p class="email">bookings@limitlessag.com</p>
+        </div>
+
+        <div class="footer__contact">
+            <h3>ARCH Entertainment</h3>
+            <p>Booking Agent for<br>
+                UK / EU / AU</p>
+            <p class="email">bookings@archentertainment.com</p>
+        </div>
+
+        <img class="footer__logo" src="/assets/Logo/Logo-bandsite.svg" alt="logo">
+        <p>Copyright The Bees Knees &copy; 2023 All Right Reserved</p>
+    </footer>
 </body>
 
 </html>
