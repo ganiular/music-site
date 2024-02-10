@@ -97,18 +97,19 @@ button {
 }
 
 
-.header {
+body>.header {
     background-color: $primary-color;
-    padding: 24px 16px 16px;
+    padding: 24px 16px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--logo {
+        max-height: 20px;
+        max-width: 120px;
+    }
 }
 
-.header--logo {
-    max-height: 20px;
-    max-width: 120px;
-}
 
 .nav {
     display: flex;
@@ -144,14 +145,16 @@ button {
         align-items: center;
         color: $on-primary-color;
         padding: 16px;
-        height: 240px;
+        width: 100%;
+        height: 40vh;
         background-color: rgba($color: $primary-color, $alpha: 0.5);
     }
 }
 
 
 .profile--image-small {
-    width: 36px;
+    min-width: 36px;
+    min-height: 36px;
     height: 36px;
     border-radius: 50%;
     background-color: $divider-color;
@@ -232,6 +235,63 @@ button {
 .divider {
     background-color: $divider-color;
     height: 1px;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &--item {
+        display: flex;
+        gap: 16px;
+
+        .context {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .head {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 8px;
+
+                .date {
+                    color: $secondarty-text-color;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+}
+
+footer {
+    color: #ffffff;
+    background-color: $primary-color;
+    padding: 24px 16px 16px;
+
+    &--socials {
+        display: flex;
+        padding: 16px 0;
+        gap: 16px;
+    }
+
+    &--contact {
+        h3 {
+            padding-bottom: 16px;
+        }
+
+        .email {
+            padding: 16px 0;
+        }
+    }
+
+    &--logo {
+        display: block;
+        padding: 24px 0 16px 0;
+    }
+
 }
 
 // Desktop (Large screens, 1280px and up)
