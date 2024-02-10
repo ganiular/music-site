@@ -1,0 +1,243 @@
+// Define color variables
+$primary-color: #323232; // BandSite-Black
+$secondary-color: #000000; // BandSite-DarkBlack
+$secondarty-text-color: #AFAFAF; // Silver
+$secondary-color-light: #FAFAFA; // Alabaster
+$divider-color: #E1E1E1; // Mercury
+$on-primary-color: #ffffff; // White
+
+// Define font faces
+@font-face {
+    font-family: 'AvenirNextLTPro';
+    src: url('/assets/Font/AvenirNextLTPro-Regular.otf') format('opentype'),
+        url('/assets/Font/Alternative/AvenirNextLTPro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNextLTProBold';
+    src: url('/assets/Font/AvenirNextLTPro-Bold.otf') format('opentype'),
+        url('/assets/Font/Alternative/AvenirNextLTProBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNextLTProDemi';
+    src: url('/assets/Font/AvenirNextLTPro-Demi.otf') format('opentype'),
+        url('/assets/Font/Alternative/AvenirNextLTProDemi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'AvenirNextLTPro', sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'AvenirNextLTProBold', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: 'AvenirNextLTProDemi', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+label,
+button {
+    font-family: 'AvenirNextLTProBold', sans-serif;
+    font-size: 10px;
+    line-height: 20px;
+}
+
+label {
+    color: $secondarty-text-color;
+}
+
+button {
+    background-color: $primary-color;
+    color: $on-primary-color;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+
+
+.header {
+    background-color: $primary-color;
+    padding: 24px 16px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header--logo {
+    max-height: 20px;
+    max-width: 120px;
+}
+
+.nav {
+    display: flex;
+    background-color: $primary-color;
+    color: $on-primary-color;
+
+    &--item {
+        padding: 16px;
+        display: block;
+        width: 50%;
+        text-align: center;
+        box-sizing: border-box;
+
+        &:hover {
+            color: $divider-color;
+        }
+
+        &-active,
+        &:active {
+            font-family: 'AvenirNextLTProBold', sans-serif;
+            border-bottom: 4px solid $on-primary-color;
+            color: $on-primary-color;
+        }
+    }
+}
+
+.hero {
+    background-image: url('/assets/Images/hero-bio.jpg');
+    background-size: cover;
+
+    &--content {
+        display: flex;
+        align-items: center;
+        color: $on-primary-color;
+        padding: 16px;
+        height: 240px;
+        background-color: rgba($color: $primary-color, $alpha: 0.5);
+    }
+}
+
+
+.profile--image-small {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $divider-color;
+    object-fit: cover;
+}
+
+
+.block1,
+.block2 {
+    padding: 24px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.block2 {
+    background-color: $secondary-color-light;
+}
+
+.form {
+    &--item {
+        display: flex;
+        align-items: flex-end;
+        gap: 16px;
+        padding-bottom: 16px;
+
+        &-padded {
+            display: block;
+            padding-left: calc(36px + 16px);
+        }
+
+        &--field {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8;
+
+
+            input {
+                width: 100%;
+                height: 32px;
+                border-radius: 4px;
+                padding: 14px;
+                border: 1px solid $divider-color;
+                outline: none;
+                background-color: $secondary-color-light;
+
+                .input--state-error {
+                    border-color: #D22D2D;
+                }
+
+                &:focus {
+                    border-color: $primary-color;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                border-radius: 4px;
+                padding: 14px;
+                border: 1px solid $divider-color;
+                outline: none;
+                background-color: $secondary-color-light;
+
+                .input--state-error {
+                    border-color: #D22D2D;
+                }
+
+                &:focus {
+                    border-color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.divider {
+    background-color: $divider-color;
+    height: 1px;
+}
+
+// Desktop (Large screens, 1280px and up)
+@media (min-width: 1280px) {}
+
+// Tablet (Medium screens, 768px to 1279px)
+@media (min-width: 768px) and (max-width: 1279px) {}
+
+// Mobile (Small screens, up to 767px)
+@media (max-width: 767px) {}
