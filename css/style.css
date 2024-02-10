@@ -157,6 +157,7 @@ button:hover {
 .form--item-padded {
   display: block;
   padding-left: 52px;
+  padding-bottom: 16px;
 }
 .form--item--field {
   width: 100%;
