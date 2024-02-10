@@ -107,7 +107,7 @@ body > .header__logo {
 .nav__item:hover {
   color: #E1E1E1;
 }
-.nav__item-active, .nav__item:active {
+.nav__item--active, .nav__item:active {
   font-family: "AvenirNextLTProBold", sans-serif;
   border-bottom: 4px solid #ffffff;
   color: #ffffff;
@@ -127,10 +127,11 @@ body > .header__logo {
   background-color: rgba(50, 50, 50, 0.5);
 }
 
-.profile__image-small {
+.profile__image--small {
   min-width: 36px;
   min-height: 36px;
   height: 36px;
+  width: 36px;
   border-radius: 50%;
   background-color: #E1E1E1;
   -o-object-fit: cover;
@@ -160,7 +161,7 @@ body > .header__logo {
   gap: 16px;
   padding-bottom: 16px;
 }
-.form__item-padded {
+.form__item--padded {
   display: block;
   padding-left: 52px;
   padding-bottom: 16px;
@@ -180,7 +181,7 @@ body > .header__logo {
   outline: none;
   background-color: #FAFAFA;
 }
-.form__item__field input .input__state-error {
+.form__item__field input .input__state--error {
   border-color: #D22D2D;
 }
 .form__item__field input:focus {
@@ -194,7 +195,7 @@ body > .header__logo {
   outline: none;
   background-color: #FAFAFA;
 }
-.form__item__field textarea .input__state-error {
+.form__item__field textarea .input__state--error {
   border-color: #D22D2D;
 }
 .form__item__field textarea:focus {
@@ -230,23 +231,23 @@ body > .header__logo {
   font-size: 13px;
 }
 
-footer {
+.footer {
   color: #ffffff;
   background-color: #323232;
   padding: 24px 16px 16px;
 }
-footer__socials {
+.footer__socials {
   display: flex;
   padding: 16px 0;
   gap: 16px;
 }
-footer__contact h3 {
+.footer__contact h3 {
   padding-bottom: 16px;
 }
-footer__contact .email {
+.footer__contact .email {
   padding: 16px 0;
 }
-footer__logo {
+.footer__logo {
   display: block;
   padding: 24px 0 16px 0;
 }/*# sourceMappingURL=style.css.map */

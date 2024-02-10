@@ -127,7 +127,7 @@ body>.header {
             color: $divider-color;
         }
 
-        &-active,
+        &--active,
         &:active {
             font-family: 'AvenirNextLTProBold', sans-serif;
             border-bottom: 4px solid $on-primary-color;
@@ -152,10 +152,11 @@ body>.header {
 }
 
 
-.profile__image-small {
+.profile__image--small {
     min-width: 36px;
     min-height: 36px;
     height: 36px;
+    width: 36px;
     border-radius: 50%;
     background-color: $divider-color;
     object-fit: cover;
@@ -186,7 +187,7 @@ body>.header {
         gap: 16px;
         padding-bottom: 16px;
 
-        &-padded {
+        &--padded {
             display: block;
             padding-left: calc(36px + 16px);
             padding-bottom: 16px;
@@ -208,7 +209,7 @@ body>.header {
                 outline: none;
                 background-color: $secondary-color-light;
 
-                .input__state-error {
+                .input__state--error {
                     border-color: #D22D2D;
                 }
 
@@ -225,7 +226,7 @@ body>.header {
                 outline: none;
                 background-color: $secondary-color-light;
 
-                .input__state-error {
+                .input__state--error {
                     border-color: #D22D2D;
                 }
 
@@ -271,7 +272,7 @@ body>.header {
 
 }
 
-footer {
+.footer {
     color: #ffffff;
     background-color: $primary-color;
     padding: 24px 16px 16px;
