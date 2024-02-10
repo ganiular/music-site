@@ -9,24 +9,24 @@ $on-primary-color: #ffffff; // White
 // Define font faces
 @font-face {
     font-family: 'AvenirNextLTPro';
-    src: url('/assets/Font/AvenirNextLTPro-Regular.otf') format('opentype'),
-        url('/assets/Font/Alternative/AvenirNextLTPro.ttf') format('truetype');
+    src: url('../assets/Font/AvenirNextLTPro-Regular.otf') format('opentype'),
+        url('../assets/Font/Alternative/AvenirNextLTPro.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'AvenirNextLTProBold';
-    src: url('/assets/Font/AvenirNextLTPro-Bold.otf') format('opentype'),
-        url('/assets/Font/Alternative/AvenirNextLTProBold.ttf') format('truetype');
+    src: url('../assets/Font/AvenirNextLTPro-Bold.otf') format('opentype'),
+        url('../assets/Font/Alternative/AvenirNextLTProBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'AvenirNextLTProDemi';
-    src: url('/assets/Font/AvenirNextLTPro-Demi.otf') format('opentype'),
-        url('/assets/Font/Alternative/AvenirNextLTProDemi.ttf') format('truetype');
+    src: url('../assets/Font/AvenirNextLTPro-Demi.otf') format('opentype'),
+        url('../assets/Font/Alternative/AvenirNextLTProDemi.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
@@ -209,12 +209,13 @@ body>.header {
                 outline: none;
                 background-color: $secondary-color-light;
 
-                .input__state--error {
-                    border-color: #D22D2D;
-                }
 
                 &:focus {
                     border-color: $primary-color;
+                }
+
+                &.input__state--error {
+                    border-color: #D22D2D !important;
                 }
             }
 
@@ -226,7 +227,7 @@ body>.header {
                 outline: none;
                 background-color: $secondary-color-light;
 
-                .input__state--error {
+                &.input__state--error {
                     border-color: #D22D2D;
                 }
 
