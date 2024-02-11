@@ -388,6 +388,9 @@ button:hover {
   .comments {
     gap: 36px;
   }
+  .footer {
+    padding: 48px 36px 36px;
+  }
   .footer__head {
     display: flex;
     align-items: center;
@@ -423,10 +426,13 @@ button:hover {
   justify-content: space-evenly;
 }
 .hero__content .album {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 16px;
   height: 160px;
   width: 100%;
-  background-color: #FAFAFA;
+  background-color: rgba(250, 250, 250, 0.5);
   border-radius: 8px;
 }
 
