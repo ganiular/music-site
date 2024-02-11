@@ -299,6 +299,7 @@ button:hover {
   }
   .hero__content {
     height: 85vh;
+    padding: 36px;
   }
   /* Define Typography*/
   h1 {
@@ -382,7 +383,7 @@ button:hover {
     padding: 0;
   }
   .submit__field button {
-    width: 150px;
+    min-width: 150px;
   }
   .comments {
     gap: 36px;
@@ -415,6 +416,20 @@ button:hover {
     display: none;
   }
 }
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.hero__content .album {
+  margin-top: 16px;
+  height: 160px;
+  width: 100%;
+  background-color: #FAFAFA;
+  border-radius: 8px;
+}
+
 .section {
   padding: 24px 0 16px;
 }
@@ -439,6 +454,7 @@ button:hover {
   font-size: 12px;
   line-height: 20px;
   color: #AFAFAF;
+  padding-bottom: 4px;
 }
 .section .tickets .ticket .field .date {
   font-family: "AvenirNextLTProDemi", sans-serif;
@@ -450,4 +466,58 @@ button:hover {
   font-family: "AvenirNextLTProDemi", sans-serif;
   font-size: 16px;
   line-height: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th {
+  font-family: "AvenirNextLTProBold", sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #AFAFAF;
+  padding: 24px 18px;
+  text-align: left;
+}
+table td {
+  padding: 24px 18px;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 1px solid #E1E1E1;
+}
+table td.date {
+  font-family: "AvenirNextLTProDemi", sans-serif;
+}
+table td button {
+  font-family: "AvenirNextLTProDemi", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  min-width: 150px;
+}
+table tr:hover {
+  background-color: #FAFAFA;
+}
+table tr:active {
+  background-color: #E1E1E1;
+}
+
+#ticketsTable.hide {
+  display: none;
+}
+
+#ticketsList.hide {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 24px;
+  }
+  .hero {
+    background-image: url("../assets/images/hero-shows.jpg");
+  }
+  .hero .hero__content .album {
+    width: 480px;
+  }
 }/*# sourceMappingURL=shows.css.map */

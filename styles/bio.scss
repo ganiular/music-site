@@ -369,6 +369,7 @@ button {
     .hero {
         &__content {
             height: 85vh;
+            padding: 36px;
         }
     }
 
@@ -476,7 +477,7 @@ button {
         padding: 0;
 
         button {
-            width: 150px;
+            min-width: 150px;
         }
     }
 
