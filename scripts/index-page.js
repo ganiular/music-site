@@ -41,15 +41,15 @@ const handleSubmit = (event) => {
 
         const nameHeading = document.createElement('h3');
         nameHeading.classList.add('name');
-        nameHeading.textContent = username;
+        nameHeading.innerText = username;
 
         const dateDiv = document.createElement('div');
         dateDiv.classList.add('date');
-        dateDiv.textContent = formatDate(date);
+        dateDiv.innerText = formatDate(date);
 
         const bodyParagraph = document.createElement('p');
         bodyParagraph.classList.add('body');
-        bodyParagraph.textContent = comment;
+        bodyParagraph.innerText = comment;
 
         const divider = document.createElement('div');
         divider.classList.add('divider');
