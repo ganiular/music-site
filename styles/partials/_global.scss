@@ -1,0 +1,13 @@
+$primary-color: #323232; 
+$secondary-color: #000000; 
+$secondarty-text-color: #AFAFAF;
+$secondary-color-light: #FAFAFA;
+$divider-color: #E1E1E1; 
+$on-primary-color: #ffffff;
+@use "./assets/fonts" as * ;
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-border;
+}

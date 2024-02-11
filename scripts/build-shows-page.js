@@ -47,7 +47,7 @@ const loadTickets = (event) => {
             tableDataDate.innerText = data.date;
 
             const tableDataVenue = document.createElement('td');
-            tableDataVenue.innerText = data.value;
+            tableDataVenue.innerText = data.venue;
 
             const tableDataLocation = document.createElement('td');
             tableDataLocation.innerText = data.location;

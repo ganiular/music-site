@@ -72,9 +72,8 @@ const handleSubmit = (event) => {
 
 
 const handleChange = (event) => {
-    const form = event.target;
-    form.name.classList.remove('input__state--error');
-    form.comment.classList.remove('input__state--error');
+    const input = event.target;
+    input.classList.remove('input__state--error');
 }
 
 formElm.addEventListener("submit", handleSubmit);
