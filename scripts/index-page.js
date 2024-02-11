@@ -8,15 +8,14 @@ const formatDate = (date) => {
     return `${day}/${month}/${year}`;
 }
 
+
 const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
 
-
     const username = form.name.value;
     const comment = form.comment.value;
     const date = new Date();
-
 
     if (!username) {
         console.log(username);
@@ -27,22 +26,50 @@ const handleSubmit = (event) => {
         form.reset();
         handleChange(event);
 
-        const html = `
-        <div class="comments__item">
-        <div class="profile__image--small"></div>
-        <div class="context">
-        <div class="head">
-        <h3 class="name">${username}</h3>
-        <div class="date">${formatDate(date)}</div>
-        </div>
-        <p class="body">${comment}</p>
-        </div>
-        </div>`;
+        // Create elements
+        const commentsItem = document.createElement('div');
+        commentsItem.classList.add('comments__item');
+
+        const profileImage = document.createElement('div');
+        profileImage.classList.add('profile__image--small');
+
+        const context = document.createElement('div');
+        context.classList.add('context');
+
+        const head = document.createElement('div');
+        head.classList.add('head');
+
+        const nameHeading = document.createElement('h3');
+        nameHeading.classList.add('name');
+        nameHeading.textContent = username;
+
+        const dateDiv = document.createElement('div');
+        dateDiv.classList.add('date');
+        dateDiv.textContent = formatDate(date);
+
+        const bodyParagraph = document.createElement('p');
+        bodyParagraph.classList.add('body');
+        bodyParagraph.textContent = comment;
+
+        const divider = document.createElement('div');
+        divider.classList.add('divider');
+
+        // Append elements
+        head.appendChild(nameHeading);
+        head.appendChild(dateDiv);
+
+        context.appendChild(head);
+        context.appendChild(bodyParagraph);
+
+        commentsItem.appendChild(profileImage);
+        commentsItem.appendChild(context);
 
         const commentsElem = document.querySelector(".comments");
-        commentsElem.insertAdjacentHTML('afterbegin', html); // Append the first child of the created element
+        commentsElem.insertBefore(divider, commentsElem.firstChild);
+        commentsElem.insertBefore(commentsItem, commentsElem.firstChild);
     }
 }
+
 
 const handleChange = (event) => {
     const form = event.target;
