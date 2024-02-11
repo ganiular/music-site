@@ -388,6 +388,9 @@ button:hover {
   .comments {
     gap: 36px;
   }
+  .footer {
+    padding: 48px 36px 36px;
+  }
   .footer__head {
     display: flex;
     align-items: center;
