@@ -92,13 +92,17 @@ table {
         }
     }
 
-    tr {
-        &:hover {
-            background-color: $secondary-color-light;
-        }
+    tbody {
+        tr {
+            cursor: pointer;
 
-        &:active {
-            background-color: $divider-color;
+            &:hover {
+                background-color: $secondary-color-light;
+            }
+
+            &.select {
+                background-color: $divider-color;
+            }
         }
     }
 }

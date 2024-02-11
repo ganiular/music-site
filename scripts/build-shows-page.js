@@ -41,6 +41,7 @@ const loadTickets = (event) => {
         for (let data of tickets) {
             // Create elements
             const tableRow = document.createElement('tr');
+            tableRow.addEventListener('click', handleSelect);
 
             const tableDataDate = document.createElement('td');
             tableDataDate.classList.add('date');
@@ -111,6 +112,10 @@ const createField = (label, value) => {
     fieldContainer.appendChild(valueDiv);
 
     return fieldContainer;
+}
+
+function handleSelect(ev) {
+    this.classList.toggle('select');
 }
 
 const handleView = () => {

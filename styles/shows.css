@@ -498,10 +498,13 @@ table td button {
   line-height: 20px;
   min-width: 150px;
 }
-table tr:hover {
+table tbody tr {
+  cursor: pointer;
+}
+table tbody tr:hover {
   background-color: #FAFAFA;
 }
-table tr:active {
+table tbody tr.select {
   background-color: #E1E1E1;
 }
 
