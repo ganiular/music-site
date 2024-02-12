@@ -133,6 +133,7 @@ const handleView = () => {
 }
 
 window.addEventListener('load', loadTickets);
+window.addEventListener('resize', loadTickets);
 
 window.addEventListener('load', handleView);
 window.addEventListener('resize', handleView);
