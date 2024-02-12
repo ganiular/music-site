@@ -419,6 +419,9 @@ button:hover {
     display: none;
   }
 }
+.hero {
+  background-image: url("../assets/images/hero-shows.jpg");
+}
 .hero__content {
   display: flex;
   flex-direction: column;
@@ -428,7 +431,6 @@ button:hover {
 }
 .hero__content .subtitle {
   padding: 8px 0;
-  width: 70%;
 }
 .hero__content iframe {
   margin-top: 8px;
@@ -523,10 +525,7 @@ table tbody tr:active, table tbody tr.select {
   .section {
     padding: 24px;
   }
-  .hero {
-    background-image: url("../assets/images/hero-shows.jpg");
-  }
-  .hero .hero__content iframe {
+  .hero__content iframe {
     width: 480px;
     height: auto;
   }
