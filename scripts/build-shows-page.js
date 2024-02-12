@@ -79,7 +79,7 @@ const loadTickets = (event) => {
             actionContainer.classList.add('action');
 
             const buyButton = document.createElement('button');
-            buyButton.textContent = 'BUY TICKETS';
+            buyButton.innerText = 'BUY TICKETS';
 
             // Append elements
             actionContainer.appendChild(buyButton);
@@ -103,10 +103,10 @@ const createField = (label, value) => {
 
     const labelDiv = document.createElement('div');
     labelDiv.classList.add('label');
-    labelDiv.textContent = label;
+    labelDiv.innerText = label;
 
     const valueDiv = document.createElement('div');
-    valueDiv.textContent = value;
+    valueDiv.innerText = value;
 
     fieldContainer.appendChild(labelDiv);
     fieldContainer.appendChild(valueDiv);
