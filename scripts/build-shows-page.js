@@ -36,6 +36,10 @@ const loadTickets = (event) => {
     const tableBody = document.getElementById("tableBody");
     const ticketsList = document.getElementById('ticketsList');
 
+    // Clear content
+    tableBody.innerHTML = '';
+    ticketsList.innerHTML = '';
+
     // If Tablet or Desktop screen
     if (window.screen.width >= 768) {
         for (let data of tickets) {
