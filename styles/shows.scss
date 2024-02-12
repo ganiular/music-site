@@ -100,6 +100,7 @@ table {
                 background-color: $secondary-color-light;
             }
 
+            &:active,
             &.select {
                 background-color: $divider-color;
             }
