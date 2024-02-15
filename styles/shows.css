@@ -74,6 +74,7 @@ button {
   color: #ffffff;
   height: 40px;
   width: 100%;
+  border: none;
   border-radius: 4px;
 }
 button:hover {
@@ -128,7 +129,7 @@ button:hover {
   background-color: rgba(50, 50, 50, 0.5);
 }
 
-.profile__image--small {
+.profile__image--small, .comments .comment__image {
   min-width: 36px;
   min-height: 36px;
   height: 36px;
@@ -229,21 +230,21 @@ button:hover {
   flex-direction: column;
   gap: 16px;
 }
-.comments__item {
+.comments .comment {
   display: flex;
   gap: 16px;
 }
-.comments__item .context {
+.comments .comment__context {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.comments__item .context .head {
+.comments .comment__context .comment__head {
   display: flex;
   justify-content: space-between;
   padding-bottom: 8px;
 }
-.comments__item .context .head .date {
+.comments .comment__context .comment__head .comment__date {
   color: #AFAFAF;
   font-size: 13px;
 }
@@ -348,7 +349,7 @@ button:hover {
   .gallery > img {
     width: 32%;
   }
-  .profile__image--small {
+  .profile__image--small, .comments .comment__image {
     min-width: 48px;
     min-height: 48px;
     height: 48px;
@@ -429,7 +430,7 @@ button:hover {
   justify-content: space-evenly;
   height: unset;
 }
-.hero__content .subtitle {
+.hero__content .hero__subtitle {
   padding: 8px 0;
 }
 .hero__content iframe {
@@ -444,83 +445,86 @@ button:hover {
 .section h2 {
   padding: 16px;
 }
-.section .tickets {
+.section .tickets-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.section .tickets .ticket {
+.section .tickets-list .ticket {
   padding: 0 16px;
 }
-.section .tickets .ticket .field {
+.section .tickets-list .ticket .field {
   padding: 8px 0;
   font-size: 16px;
   line-height: 20px;
 }
-.section .tickets .ticket .field .label {
+.section .tickets-list .ticket .field .label {
   font-family: "AvenirNextLTProBold", sans-serif;
   font-size: 12px;
   line-height: 20px;
   color: #AFAFAF;
   padding-bottom: 4px;
 }
-.section .tickets .ticket .field .date {
+.section .tickets-list .ticket .field .date {
   font-family: "AvenirNextLTProDemi", sans-serif;
 }
-.section .tickets .ticket .action {
+.section .tickets-list .ticket .action {
   padding: 8px 0;
 }
-.section .tickets .ticket .action button {
+.section .tickets-list .ticket .action button {
   font-family: "AvenirNextLTProDemi", sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+.tickets-table {
+  display: flex;
+  flex-direction: column;
 }
-table th {
+.tickets-table__head {
+  display: flex;
   font-family: "AvenirNextLTProBold", sans-serif;
   font-size: 12px;
   line-height: 20px;
   color: #AFAFAF;
-  padding: 24px 18px;
-  text-align: left;
 }
-table td {
+.tickets-table__head div {
+  width: 25%;
   padding: 24px 18px;
+}
+.tickets-table .table-row {
+  display: flex;
+  align-items: center;
   font-size: 16px;
   line-height: 20px;
   border-bottom: 1px solid #E1E1E1;
+  cursor: pointer;
 }
-table td.date {
+.tickets-table .table-row__date {
   font-family: "AvenirNextLTProDemi", sans-serif;
 }
-table td button {
+.tickets-table .table-row div {
+  width: 25%;
+  padding: 24px 18px;
+}
+.tickets-table .table-row button {
   font-family: "AvenirNextLTProDemi", sans-serif;
   font-size: 15px;
   line-height: 20px;
   min-width: 150px;
 }
-table tbody tr {
-  cursor: pointer;
-}
-table tbody tr:hover {
+.tickets-table .table-row:hover {
   background-color: #FAFAFA;
 }
-table tbody tr:active, table tbody tr.select {
+.tickets-table .table-row:active, .tickets-table .table-row.select {
   background-color: #E1E1E1;
 }
 
-#ticketsTable.hide {
-  display: none;
+@media (max-width: 767px) {
+  .tickets-table {
+    display: none;
+  }
 }
-
-#ticketsList.hide {
-  display: none;
-}
-
 @media screen and (min-width: 768px) {
   .section {
     padding: 24px;
@@ -528,5 +532,8 @@ table tbody tr:active, table tbody tr.select {
   .hero__content iframe {
     width: 480px;
     height: auto;
+  }
+  .section .tickets-list {
+    display: none;
   }
 }/*# sourceMappingURL=shows.css.map */

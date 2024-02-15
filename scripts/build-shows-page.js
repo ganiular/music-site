@@ -33,72 +33,74 @@ const tickets = [
 
 
 const loadTickets = (event) => {
-    const tableBody = document.getElementById("tableBody");
-    const ticketsList = document.getElementById('ticketsList');
+    tickets.forEach(addTicket);
+}
 
-    // Clear content
-    tableBody.innerHTML = '';
-    ticketsList.innerHTML = '';
+const addTicket = (ticket) => {
+    addTicketToTable(ticket);
+    addTicketToList(ticket);
+}
 
-    // If Tablet or Desktop screen
-    if (window.screen.width >= 768) {
-        for (let data of tickets) {
-            // Create elements
-            const tableRow = document.createElement('tr');
-            tableRow.addEventListener('click', handleSelect);
+const addTicketToTable = (ticket) => {
+    // Create elements
+    const tableRow = document.createElement('div');
+    tableRow.classList.add('table-row');
+    tableRow.addEventListener('click', handleSelect);
 
-            const tableDataDate = document.createElement('td');
-            tableDataDate.classList.add('date');
-            tableDataDate.innerText = data.date;
+    const tableDataDate = document.createElement('div');
+    tableDataDate.classList.add('table-row__date');
+    tableDataDate.innerText = ticket.date;
 
-            const tableDataVenue = document.createElement('td');
-            tableDataVenue.innerText = data.venue;
+    const tableDataVenue = document.createElement('div');
+    tableDataVenue.innerText = ticket.venue;
 
-            const tableDataLocation = document.createElement('td');
-            tableDataLocation.innerText = data.location;
+    const tableDataLocation = document.createElement('div');
+    tableDataLocation.innerText = ticket.location;
 
-            const tableDataButton = document.createElement('td');
-            const button = document.createElement('button');
-            button.innerText = 'BUY TICKETS';
+    const tableDataAction = document.createElement('div');
+    const button = document.createElement('button');
+    button.innerText = 'BUY TICKETS';
 
-            // Append  elements
-            tableRow.appendChild(tableDataDate);
-            tableRow.appendChild(tableDataVenue);
-            tableRow.appendChild(tableDataLocation);
-            tableRow.appendChild(tableDataButton);
-            tableDataButton.appendChild(button);
-            tableBody.appendChild(tableRow);
-        }
-    } else { // Mobile
-        for (let data of tickets) {
-            // Create elements
-            const ticketContainer = document.createElement('div');
-            ticketContainer.classList.add('ticket');
+    // Append  elements
+    tableRow.appendChild(tableDataDate);
+    tableRow.appendChild(tableDataVenue);
+    tableRow.appendChild(tableDataLocation);
+    tableRow.appendChild(tableDataAction);
+    tableDataAction.appendChild(button)
 
-            const dateField = createField('DATE', data.date);
-            const venueField = createField('VENUE', data.venue);
-            const locationField = createField('LOCATION', data.location);
+    const tableBody = document.querySelector('.tickets-table__body');
+    tableBody.appendChild(tableRow);
+}
 
-            const actionContainer = document.createElement('div');
-            actionContainer.classList.add('action');
+const addTicketToList = (ticket) => {
+    // Create elements
+    const ticketContainer = document.createElement('div');
+    ticketContainer.classList.add('ticket');
 
-            const buyButton = document.createElement('button');
-            buyButton.innerText = 'BUY TICKETS';
+    const dateField = createField('DATE', ticket.date);
+    const venueField = createField('VENUE', ticket.venue);
+    const locationField = createField('LOCATION', ticket.location);
 
-            // Append elements
-            actionContainer.appendChild(buyButton);
-            ticketContainer.appendChild(dateField);
-            ticketContainer.appendChild(venueField);
-            ticketContainer.appendChild(locationField);
-            ticketContainer.appendChild(actionContainer);
-            ticketsList.appendChild(ticketContainer);
+    const actionContainer = document.createElement('div');
+    actionContainer.classList.add('action');
 
-            // Divider
-            const divider = document.createElement('div');
-            divider.classList.add('divider');
-            ticketsList.appendChild(divider);
-        }
-    }
+    const buyButton = document.createElement('button');
+    buyButton.innerText = 'BUY TICKETS';
+
+    // Append elements
+    ticketContainer.appendChild(dateField);
+    ticketContainer.appendChild(venueField);
+    ticketContainer.appendChild(locationField);
+    ticketContainer.appendChild(actionContainer);
+    actionContainer.appendChild(buyButton);
+
+    const ticketsList = document.querySelector('.tickets-list');
+    ticketsList.appendChild(ticketContainer);
+
+    // Divider
+    const divider = document.createElement('div');
+    divider.classList.add('divider');
+    ticketsList.appendChild(divider);
 }
 
 const createField = (label, value) => {
@@ -122,22 +124,5 @@ function handleSelect(ev) {
     this.classList.toggle('select');
 }
 
-const handleView = () => {
-    const ticketsTable = document.getElementById("ticketsTable");
-    const ticketsList = document.getElementById('ticketsList');
-
-    // Toggle between list or table
-    if (window.screen.width >= 768) {
-        ticketsList.classList.add('hide');
-        ticketsTable.classList.remove('hide');
-    } else {
-        ticketsList.classList.remove('hide');
-        ticketsTable.classList.add('hide');
-    }
-}
 
 window.addEventListener('load', loadTickets);
-window.addEventListener('resize', loadTickets);
-
-window.addEventListener('load', handleView);
-window.addEventListener('resize', handleView);

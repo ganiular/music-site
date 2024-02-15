@@ -10,7 +10,7 @@
         justify-content: space-evenly;
         height: unset;
 
-        .subtitle {
+        .hero__subtitle {
             padding: 8px 0;
         }
 
@@ -29,7 +29,7 @@
         padding: 16px;
     }
 
-    .tickets {
+    .tickets-list {
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -68,27 +68,38 @@
     }
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.tickets-table {
+    display: flex;
+    flex-direction: column;
 
-    th {
+    &__head {
+        display: flex;
         font-family: 'AvenirNextLTProBold', sans-serif;
         font-size: 12px;
         line-height: 20px;
         color: $secondary-text-color;
-        padding: 24px 18px;
-        text-align: left;
+
+        div {
+            width: 25%;
+            padding: 24px 18px;
+        }
     }
 
-    td {
-        padding: 24px 18px;
+    .table-row {
+        display: flex;
+        align-items: center;
         font-size: 16px;
         line-height: 20px;
         border-bottom: 1px solid $divider-color;
+        cursor: pointer;
 
-        &.date {
+        &__date {
             font-family: 'AvenirNextLTProDemi', sans-serif;
+        }
+
+        div {
+            width: 25%;
+            padding: 24px 18px;
         }
 
         button {
@@ -97,34 +108,27 @@ table {
             line-height: 20px;
             min-width: 150px;
         }
-    }
 
-    tbody {
-        tr {
-            cursor: pointer;
 
-            &:hover {
-                background-color: $secondary-color-light;
-            }
 
-            &:active,
-            &.select {
-                background-color: $divider-color;
-            }
+        &:hover {
+            background-color: $secondary-color-light;
+        }
+
+        &:active,
+        &.select {
+            background-color: $divider-color;
         }
     }
 }
 
-#ticketsTable.hide {
-    display: none;
-}
-
-#ticketsList.hide {
-    display: none;
-}
 
 // Mobile
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .tickets-table {
+        display: none;
+    }
+}
 
 // Tablet 
 @media screen and (min-width: 768px) {
@@ -137,5 +141,9 @@ table {
             width: 480px;
             height: auto;
         }
+    }
+
+    .section .tickets-list {
+        display: none;
     }
 }
