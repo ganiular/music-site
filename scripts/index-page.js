@@ -1,56 +1,39 @@
-const comments = [
-    {
-        username: "Victor Pinto",
-        date: "11/02/2023",
-        body: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    },
-    {
-        username: "Christina Cabrera",
-        date: "10/28/2023",
-        body: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    },
-    {
-        username: "Isaac Tadesse",
-        date: "10/20/2023",
-        body: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    },
-];
-
 const formElm = document.querySelector("form");
 
-const formatDate = (date) => {
+const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
     const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear();
 
     return `${day}/${month}/${year}`;
 }
 
 
-const handleSubmit = (event) => {
+const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.target;
 
     const comment = {
-        username: form.name.value,
-        body: form.comment.value,
-        date: formatDate(new Date()),
+        name: form.name.value,
+        comment: form.comment.value,
     };
 
-    if (!comment.username) {
+    if (!comment.name) {
         form.elements.name.classList.add("input__state--error");
-    } else if (!comment.body) {
+    } else if (!comment.comment) {
         form.elements.comment.classList.add("input__state--error");
     } else {
+        const resComment = await siteApi.postComment(comment);
+        addComment(resComment);
         form.reset();
-
-        addComment(comment);
     }
 }
 
-const loadComments = (event) => {
+const loadComments = async (event) => {
+    const comments = await siteApi.getComments();
     // reverse comments order and add each to page
-    comments.reverse().forEach(addComment);
+    comments.forEach(addComment);
 }
 
 const addComment = (comment) => {
@@ -69,15 +52,15 @@ const addComment = (comment) => {
 
     const nameHeading = document.createElement('h3');
     nameHeading.classList.add('comment__name');
-    nameHeading.innerText = comment.username;
+    nameHeading.innerText = comment.name;
 
     const dateDiv = document.createElement('div');
     dateDiv.classList.add('comment__date');
-    dateDiv.innerText = comment.date;
+    dateDiv.innerText = formatDate(comment.timestamp);
 
     const bodyParagraph = document.createElement('p');
     bodyParagraph.classList.add('comment__body');
-    bodyParagraph.innerText = comment.body;
+    bodyParagraph.innerText = comment.comment;
 
     const divider = document.createElement('div');
     divider.classList.add('divider');

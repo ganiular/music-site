@@ -1,38 +1,10 @@
-const tickets = [
-    {
-        date: "Mon Sept 09 2024",
-        venue: "Ronald Lane ",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Tue Sept 17 2024",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Oct 12 2024 ",
-        venue: "View Lounge ",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Nov 16 2024 ",
-        venue: "Hyatt Agency ",
-        location: "San Francisco, CA "
-    },
-    {
-        date: "Fri Nov 29 2024",
-        venue: "Moscow Center",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Wed Dec 18 2024",
-        venue: "Press Club",
-        location: "San Francisco, CA"
-    },
-];
+const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: '2-digit', year: 'numeric' });
 
+}
 
-const loadTickets = (event) => {
+const loadTickets = async (event) => {
     // Create ticket table header and body
     const tableHead = document.createElement('div');
     tableHead.classList.add('tickets-table__head');
@@ -54,6 +26,7 @@ const loadTickets = (event) => {
     ticketTable.appendChild(tableBody);
 
     // Populate tickets
+    const tickets = await siteApi.getShows();
     tickets.forEach(addTicket);
 }
 
@@ -98,8 +71,8 @@ const addTicketToList = (ticket) => {
     const ticketContainer = document.createElement('div');
     ticketContainer.classList.add('ticket');
 
-    const dateField = createField('DATE', ticket.date);
-    const venueField = createField('VENUE', ticket.venue);
+    const dateField = createField('DATE', formatDate(ticket.date));
+    const venueField = createField('VENUE', ticket.place);
     const locationField = createField('LOCATION', ticket.location);
 
     const actionContainer = document.createElement('div');
