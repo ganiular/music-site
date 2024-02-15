@@ -272,21 +272,25 @@ button {
     flex-direction: column;
     gap: 16px;
 
-    &__item {
+    .comment {
         display: flex;
         gap: 16px;
 
-        .context {
+        &__image {
+            @extend .profile__image--small;
+        }
+
+        &__context {
             width: 100%;
             display: flex;
             flex-direction: column;
 
-            .head {
+            .comment__head {
                 display: flex;
                 justify-content: space-between;
                 padding-bottom: 8px;
 
-                .date {
+                .comment__date {
                     color: $secondary-text-color;
                     font-size: 13px;
                 }

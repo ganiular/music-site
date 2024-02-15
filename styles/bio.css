@@ -128,7 +128,7 @@ button:hover {
   background-color: rgba(50, 50, 50, 0.5);
 }
 
-.profile__image--small {
+.profile__image--small, .comments .comment__image {
   min-width: 36px;
   min-height: 36px;
   height: 36px;
@@ -229,21 +229,21 @@ button:hover {
   flex-direction: column;
   gap: 16px;
 }
-.comments__item {
+.comments .comment {
   display: flex;
   gap: 16px;
 }
-.comments__item .context {
+.comments .comment__context {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.comments__item .context .head {
+.comments .comment__context .comment__head {
   display: flex;
   justify-content: space-between;
   padding-bottom: 8px;
 }
-.comments__item .context .head .date {
+.comments .comment__context .comment__head .comment__date {
   color: #AFAFAF;
   font-size: 13px;
 }
@@ -348,7 +348,7 @@ button:hover {
   .gallery > img {
     width: 32%;
   }
-  .profile__image--small {
+  .profile__image--small, .comments .comment__image {
     min-width: 48px;
     min-height: 48px;
     height: 48px;
