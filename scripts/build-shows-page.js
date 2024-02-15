@@ -33,6 +33,27 @@ const tickets = [
 
 
 const loadTickets = (event) => {
+    // Create ticket table header and body
+    const tableHead = document.createElement('div');
+    tableHead.classList.add('tickets-table__head');
+
+    const tableBody = document.createElement('div');
+    tableBody.classList.add('tickets-table__body');
+
+    // Add header titles
+    const headTitles = ['DATE', 'VENUE', "LOCATION", ''];
+    headTitles.forEach((title) => {
+        const th = document.createElement('div');
+        th.innerText = title;
+        tableHead.appendChild(th);
+    })
+
+    // include table head and body
+    const ticketTable = document.querySelector('.tickets-table');
+    ticketTable.appendChild(tableHead);
+    ticketTable.appendChild(tableBody);
+
+    // Populate tickets
     tickets.forEach(addTicket);
 }
 
