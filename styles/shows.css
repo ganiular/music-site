@@ -141,7 +141,8 @@ button:hover {
 }
 
 .block1,
-.block2 {
+.block2,
+.block3 {
   padding: 24px 16px 16px;
   display: flex;
   flex-direction: column;
@@ -248,6 +249,19 @@ button:hover {
   color: #AFAFAF;
   font-size: 13px;
 }
+.comments .comment__actions {
+  display: flex;
+}
+.comments .comment__actions button {
+  background-color: unset;
+  color: #AFAFAF;
+}
+.comments .comment__actions button:hover {
+  background-color: #FAFAFA;
+}
+.comments .comment__actions button:active {
+  background-color: #E1E1E1;
+}
 
 .footer {
   color: #ffffff;
@@ -325,14 +339,17 @@ button:hover {
     line-height: 20px;
   }
   .block1,
-  .block2 {
+  .block2,
+  .block3 {
     padding: 48px 36px 36px;
     gap: 36px;
   }
-  .block1 > * {
+  .block1 > *,
+  .block3 > * {
     margin: 0 64px;
   }
-  .block1 > h2 {
+  .block1 > h2,
+  .block3 > h2 {
     margin: 0;
   }
   .feeds {
@@ -418,6 +435,44 @@ button:hover {
   }
   .footer > .footer__logo {
     display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__content {
+    height: 85vh;
+    padding: 0;
+  }
+  .hero__content > * {
+    width: 1020px;
+    margin: auto;
+  }
+  .block1,
+  .block3 {
+    width: 1020px;
+    margin: auto;
+    padding: 48px 0 36px;
+    gap: 36px;
+  }
+  .block2 {
+    padding: 48px 0 36px;
+  }
+  .block2 > * {
+    width: 1020px;
+    margin: auto;
+  }
+  .block3 > * {
+    margin: auto;
+    width: 768px;
+  }
+  .footer {
+    padding: 48px 0 36px;
+  }
+  .footer > * {
+    width: 1020px;
+    margin: auto;
+  }
+  .footer__head--last, .footer__contact--last {
+    width: 40%;
   }
 }
 .hero {
@@ -531,9 +586,36 @@ button:hover {
   }
   .hero__content iframe {
     width: 480px;
-    height: auto;
+    height: 120px;
   }
   .section .tickets-list {
     display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__content {
+    height: 85vh;
+    padding: 0;
+  }
+  .hero__content--row {
+    display: flex;
+    width: 1020px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hero__content iframe {
+    width: 440px;
+    height: 160px;
+  }
+  .section {
+    padding: 48px 0 32px;
+    width: 1020px;
+    margin: auto;
+    display: flex;
+    gap: 36px;
+  }
+  .section .tickets-table {
+    width: 100%;
   }
 }/*# sourceMappingURL=shows.css.map */

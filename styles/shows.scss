@@ -139,11 +139,46 @@
     .hero__content {
         iframe {
             width: 480px;
-            height: auto;
+            height: 120px;
         }
     }
 
     .section .tickets-list {
         display: none;
+    }
+}
+
+// Desktop (Large screens, 1280px and up)
+@media (min-width: 1280px) {
+    .hero {
+        &__content {
+            height: 85vh;
+            padding: 0;
+
+            &--row {
+                display: flex;
+                width: 1020px;
+                margin: auto;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            iframe {
+                width: 440px;
+                height: 160px;
+            }
+        }
+    }
+
+    .section {
+        padding: 48px 0 32px;
+        width: 1020px;
+        margin: auto;
+        display: flex;
+        gap: 36px;
+
+        .tickets-table {
+            width: 100%;
+        }
     }
 }

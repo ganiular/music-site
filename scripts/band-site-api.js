@@ -22,6 +22,18 @@ class BandSiteApi {
         const res = await axios.get(url);
         return res.data;
     }
+
+    async likeComment(id) {
+        const url = this.baseUrl + '/comments/' + id + '/like?api_key=' + this.apiKey;
+        const res = await axios.put(url);
+        return res.data;
+    }
+
+    async deleteComment(id) {
+        const url = this.baseUrl + '/comments/' + id + '?api_key=' + this.apiKey;
+        const res = await axios.delete(url);
+        return res.data;
+    }
 }
 
-const siteApi = new BandSiteApi("");
+const siteApi = new BandSiteApi("8e872c0e-e398-49b6-9f4b-a3a332c4211c");

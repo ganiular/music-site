@@ -51,6 +51,7 @@ const addComment = (comment) => {
     // Create elements
     const commentsItem = document.createElement('div');
     commentsItem.classList.add('comment');
+    commentsItem.id = comment.id;
 
     const profileImage = document.createElement('div');
     profileImage.classList.add('comment__image');
@@ -73,6 +74,17 @@ const addComment = (comment) => {
     bodyParagraph.classList.add('comment__body');
     bodyParagraph.innerText = comment.comment;
 
+    const commentActions = document.createElement('p');
+    commentActions.classList.add('comment__actions');
+
+    const likeButton = document.createElement('button');
+    likeButton.innerText = 'LIKES ' + comment.likes;
+    likeButton.addEventListener('click', function (e) { handleLike(e, comment.id) });
+
+    const deleteButton = document.createElement('button');
+    deleteButton.innerText = 'DELETE';
+    deleteButton.addEventListener('click', function (e) { handleDelete(e, comment.id) });
+
     const divider = document.createElement('div');
     divider.classList.add('divider');
 
@@ -80,14 +92,41 @@ const addComment = (comment) => {
     head.appendChild(nameHeading);
     head.appendChild(dateDiv);
 
+    commentActions.appendChild(likeButton);
+    commentActions.appendChild(deleteButton);
+
     context.appendChild(head);
     context.appendChild(bodyParagraph);
+    context.appendChild(commentActions);
 
     commentsItem.appendChild(profileImage);
     commentsItem.appendChild(context);
 
     commentsElem.insertBefore(divider, commentsElem.firstChild);
     commentsElem.insertBefore(commentsItem, commentsElem.firstChild);
+}
+
+const handleLike = async (event, id) => {
+    try {
+        const comment = await siteApi.likeComment(id);
+        event.target.innerText = 'LIKES ' + comment.likes;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const handleDelete = async (event, id) => {
+    try {
+        const comment = await siteApi.deleteComment(id);
+        const commentElm = document.getElementById(comment.id);
+
+        // Remove divider and the comment element
+        const divider = commentElm.nextSibling;
+        commentElm.parentElement.removeChild(divider);
+        commentElm.parentElement.removeChild(commentElm);
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 const removeErrorBorder = (event) => {

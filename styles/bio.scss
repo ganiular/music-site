@@ -171,7 +171,8 @@ button {
 
 
 .block1,
-.block2 {
+.block2,
+.block3 {
     padding: $padding-size-big $padding-size $padding-size;
     display: flex;
     flex-direction: column;
@@ -297,6 +298,23 @@ button {
                 }
             }
         }
+
+        &__actions {
+            display: flex;
+
+            button {
+                background-color: unset;
+                color: $secondary-text-color;
+
+                &:hover {
+                    background-color: $secondary-color-light;
+                }
+
+                &:active {
+                    background-color: $divider-color;
+                }
+            }
+        }
     }
 
 }
@@ -406,16 +424,19 @@ button {
     }
 
     .block1,
-    .block2 {
+    .block2,
+    .block3 {
         padding: 48px 36px 36px;
         gap: 36px;
     }
 
-    .block1>* {
+    .block1>*,
+    .block3>* {
         margin: 0 64px;
     }
 
-    .block1>h2 {
+    .block1>h2,
+    .block3>h2 {
         margin: 0;
     }
 
@@ -531,4 +552,52 @@ button {
 }
 
 // Desktop (Large screens, 1280px and up)
-@media (min-width: 1280px) {}
+@media (min-width: 1280px) {
+    .hero {
+        &__content {
+            height: 85vh;
+            padding: 0;
+
+            >* {
+                width: 1020px;
+                margin: auto;
+            }
+        }
+    }
+
+    .block1,
+    .block3 {
+        width: 1020px;
+        margin: auto;
+        padding: 48px 0 36px;
+        gap: 36px;
+    }
+
+    .block2 {
+        padding: 48px 0 36px;
+
+        >* {
+            width: 1020px;
+            margin: auto;
+        }
+    }
+
+    .block3>* {
+        margin: auto;
+        width: 768px;
+    }
+
+    .footer {
+        padding: 48px 0 36px;
+
+        >* {
+            width: 1020px;
+            margin: auto;
+        }
+
+        &__head--last,
+        &__contact--last {
+            width: 40%;
+        }
+    }
+}
