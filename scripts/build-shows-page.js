@@ -1,7 +1,6 @@
 const formatDate = (timestamp) => {
     const date = new Date(timestamp);
     return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: '2-digit', year: 'numeric' });
-
 }
 
 const loadTickets = async (event) => {
@@ -26,8 +25,12 @@ const loadTickets = async (event) => {
     ticketTable.appendChild(tableBody);
 
     // Populate tickets
-    const tickets = await siteApi.getShows();
-    tickets.forEach(addTicket);
+    try {
+        const tickets = await siteApi.getShows();
+        tickets.forEach(addTicket);
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 const addTicket = (ticket) => {
@@ -43,10 +46,10 @@ const addTicketToTable = (ticket) => {
 
     const tableDataDate = document.createElement('div');
     tableDataDate.classList.add('table-row__date');
-    tableDataDate.innerText = ticket.date;
+    tableDataDate.innerText = formatDate(ticket.date);
 
     const tableDataVenue = document.createElement('div');
-    tableDataVenue.innerText = ticket.venue;
+    tableDataVenue.innerText = ticket.place;
 
     const tableDataLocation = document.createElement('div');
     tableDataLocation.innerText = ticket.location;

@@ -1,4 +1,6 @@
 const formElm = document.querySelector("form");
+const commentsElem = document.querySelector("#userComment");
+
 
 const formatDate = (timestamp) => {
     const date = new Date(timestamp);
@@ -24,16 +26,25 @@ const handleSubmit = async (event) => {
     } else if (!comment.comment) {
         form.elements.comment.classList.add("input__state--error");
     } else {
-        const resComment = await siteApi.postComment(comment);
-        addComment(resComment);
-        form.reset();
+        try {
+            const resComment = await siteApi.postComment(comment);
+            addComment(resComment);
+            form.reset();
+        }
+        catch (error) {
+            console.error(error);
+        }
     }
 }
 
 const loadComments = async (event) => {
-    const comments = await siteApi.getComments();
-    // reverse comments order and add each to page
-    comments.forEach(addComment);
+    try {
+        const comments = await siteApi.getComments();
+        comments.forEach(addComment);
+    }
+    catch (error) {
+        console.error(error);
+    }
 }
 
 const addComment = (comment) => {
@@ -75,17 +86,16 @@ const addComment = (comment) => {
     commentsItem.appendChild(profileImage);
     commentsItem.appendChild(context);
 
-    const commentsElem = document.querySelector(".comments");
     commentsElem.insertBefore(divider, commentsElem.firstChild);
     commentsElem.insertBefore(commentsItem, commentsElem.firstChild);
 }
 
-const handleChange = (event) => {
+const removeErrorBorder = (event) => {
     const input = event.target;
     input.classList.remove('input__state--error');
 }
 
-window.addEventListener("load", loadComments)
+window.addEventListener("load", loadComments);
 
 formElm.addEventListener("submit", handleSubmit);
-formElm.addEventListener("change", handleChange);
+formElm.addEventListener("change", removeErrorBorder);
