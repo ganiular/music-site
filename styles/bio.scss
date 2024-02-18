@@ -3,42 +3,6 @@
 @import 'partials/mixins';
 @import 'partials/variables';
 
-// Define color variables
-$primary-color: #323232; // BandSite-Black
-$secondary-color: #000000; // BandSite-DarkBlack
-$secondary-text-color: #AFAFAF; // Silver
-$secondary-color-light: #FAFAFA; // Alabaster
-$divider-color: #E1E1E1; // Mercury
-$on-primary-color: #ffffff; // White
-
-// Define metric
-$padding-size: 16px;
-$padding-size-big: 24px;
-
-// Define font faces
-@font-face {
-    font-family: 'AvenirNextLTPro';
-    src: url('../assets/font/AvenirNextLTPro-Regular.otf') format('opentype'),
-        url('../assets/font/Alternative/AvenirNextLTPro.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'AvenirNextLTProBold';
-    src: url('../assets/font/AvenirNextLTPro-Bold.otf') format('opentype'),
-        url('../assets/font/Alternative/AvenirNextLTProBold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'AvenirNextLTProDemi';
-    src: url('../assets/font/AvenirNextLTPro-Demi.otf') format('opentype'),
-        url('../assets/font/Alternative/AvenirNextLTProDemi.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
 
 * {
     box-sizing: border-box;
@@ -178,10 +142,10 @@ button {
 .block1,
 .block2,
 .block3 {
-    padding: $padding-size-big $padding-size $padding-size;
+    padding: 24px 16px 16px;
     display: flex;
     flex-direction: column;
-    gap: $padding-size;
+    gap: 16px;
 }
 
 .block2 {
@@ -206,7 +170,7 @@ button {
 .gallery {
     display: flex;
     flex-direction: column;
-    gap: $padding-size 0;
+    gap: 16px 0;
 }
 
 .form {
@@ -362,9 +326,6 @@ button {
 
 // Tablet (Medium screens, 768px to 1279px)
 @include tablet {
-    $padding-size: 36px;
-    $padding-size-big: 48px;
-
     .header {
         flex-direction: row;
         justify-content: flex-start;
