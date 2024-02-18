@@ -93,7 +93,10 @@ const addComment = (comment) => {
 
     const likeCount = document.createElement('span');
     likeCount.classList.add('like__count');
-    likeCount.innerText = ' ' + comment.likes;
+    likeCount.innerText = ' LIKES ' + comment.likes;
+
+    const deleteText = document.createElement('span');
+    deleteText.innerText = ' DELETE';
 
     const divider = document.createElement('div');
     divider.classList.add('divider');
@@ -103,7 +106,7 @@ const addComment = (comment) => {
     head.appendChild(dateDiv);
 
     likeButton.append(likeImg, likeCount);
-    deleteButton.appendChild(deleteImg);
+    deleteButton.append(deleteImg, deleteText);
 
     commentActions.appendChild(likeButton);
     commentActions.appendChild(deleteButton);
@@ -124,7 +127,7 @@ const handleLike = async (event, id) => {
         const comment = await siteApi.likeComment(id);
         const commentElm = document.getElementById(id);
         const likeCount = commentElm.querySelector('.like__count');
-        likeCount.innerText = ' ' + comment.likes;
+        likeCount.innerText = ' LIKES ' + comment.likes;
     } catch (error) {
         console.error(error);
     }
