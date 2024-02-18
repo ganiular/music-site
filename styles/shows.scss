@@ -69,7 +69,7 @@
 }
 
 .tickets-table {
-    display: flex;
+    display: none;
     flex-direction: column;
 
     &__head {
@@ -123,15 +123,8 @@
 }
 
 
-// Mobile
-@media (max-width: 767px) {
-    .tickets-table {
-        display: none;
-    }
-}
-
 // Tablet 
-@media screen and (min-width: 768px) {
+@include tablet {
     .section {
         padding: 24px;
     }
@@ -146,10 +139,14 @@
     .section .tickets-list {
         display: none;
     }
+
+    .tickets-table {
+        display: flex;
+    }
 }
 
 // Desktop (Large screens, 1280px and up)
-@media (min-width: 1280px) {
+@include desktop {
     .hero {
         &__content {
             height: 85vh;

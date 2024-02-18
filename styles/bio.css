@@ -1,5 +1,17 @@
 @font-face {
   font-family: "AvenirNextLTPro";
+  src: url("/assets/Font/AvenirNextLTPro-Regular.otf") format("woff2"), url("/assets/Font/Alternative/AvenirNextLTPro.ttf") format("woff2");
+}
+@font-face {
+  font-family: "AvenirNextLTProBold";
+  src: url("/assets/Font/AvenirNextLTPro-Bold.otf") format("woff2"), url("/assets/Font/Alternative/AvenirNextLTProBold.ttf") format("woff2");
+}
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("/assets/Font/AvenirNextLTPro-Demi.otf") format("woff2"), url("/assets/Font/Alternative/AvenirNextLTProDemi.ttf") format("woff2");
+}
+@font-face {
+  font-family: "AvenirNextLTPro";
   src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/font/Alternative/AvenirNextLTPro.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -338,7 +350,7 @@ button:hover {
   }
   label,
   button {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 20px;
   }
   .block1,
