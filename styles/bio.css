@@ -283,6 +283,12 @@ button:hover {
   background-color: #323232;
   padding: 24px 16px 16px;
 }
+.footer__head .head__logo {
+  display: none;
+}
+.footer__logo {
+  padding: 24px 0 16px 0;
+}
 .footer__socials {
   display: flex;
   padding: 16px 0;
@@ -295,15 +301,7 @@ button:hover {
   padding: 16px 0;
 }
 
-@media (max-width: 767px) {
-  .footer__head .head__logo {
-    display: none;
-  }
-  .footer__logo {
-    padding: 24px 0 16px 0;
-  }
-}
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .header {
     flex-direction: row;
     justify-content: flex-start;

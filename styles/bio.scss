@@ -333,6 +333,15 @@ button {
     background-color: $primary-color;
     padding: 24px 16px 16px;
 
+    &__head {
+        .head__logo {
+            display: none;
+        }
+    }
+
+    &__logo {
+        padding: 24px 0 16px 0;
+    }
 
     &__socials {
         display: flex;
@@ -351,23 +360,8 @@ button {
     }
 }
 
-// Mobile (Small screens, up to 767px)
-@media (max-width: 767px) {
-    .footer {
-        &__head {
-            .head__logo {
-                display: none;
-            }
-        }
-
-        &__logo {
-            padding: 24px 0 16px 0;
-        }
-    }
-}
-
 // Tablet (Medium screens, 768px to 1279px)
-@media screen and (min-width: 768px) {
+@include tablet {
     $padding-size: 36px;
     $padding-size-big: 48px;
 
@@ -561,7 +555,7 @@ button {
 }
 
 // Desktop (Large screens, 1280px and up)
-@media (min-width: 1280px) {
+@include desktop {
     .hero {
         &__content {
             height: 85vh;
