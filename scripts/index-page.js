@@ -78,12 +78,22 @@ const addComment = (comment) => {
     commentActions.classList.add('comment__actions');
 
     const likeButton = document.createElement('button');
-    likeButton.innerText = 'LIKES ' + comment.likes;
+    likeButton.classList.add('comment__icon');
     likeButton.addEventListener('click', function (e) { handleLike(e, comment.id) });
 
     const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'DELETE';
+    deleteButton.classList.add('comment__icon');
     deleteButton.addEventListener('click', function (e) { handleDelete(e, comment.id) });
+
+    const likeImg = document.createElement('img');
+    likeImg.src = "./assets/icons/svg/icon-like.svg";
+
+    const deleteImg = document.createElement('img');
+    deleteImg.src = "./assets/icons/svg/icon-delete.svg";
+
+    const likeCount = document.createElement('span');
+    likeCount.classList.add('like__count');
+    likeCount.innerText = ' ' + comment.likes;
 
     const divider = document.createElement('div');
     divider.classList.add('divider');
@@ -91,6 +101,9 @@ const addComment = (comment) => {
     // Append elements
     head.appendChild(nameHeading);
     head.appendChild(dateDiv);
+
+    likeButton.append(likeImg, likeCount);
+    deleteButton.appendChild(deleteImg);
 
     commentActions.appendChild(likeButton);
     commentActions.appendChild(deleteButton);
@@ -109,7 +122,9 @@ const addComment = (comment) => {
 const handleLike = async (event, id) => {
     try {
         const comment = await siteApi.likeComment(id);
-        event.target.innerText = 'LIKES ' + comment.likes;
+        const commentElm = document.getElementById(id);
+        const likeCount = commentElm.querySelector('.like__count');
+        likeCount.innerText = ' ' + comment.likes;
     } catch (error) {
         console.error(error);
     }

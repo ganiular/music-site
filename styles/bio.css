@@ -262,6 +262,9 @@ button:hover {
 .comments .comment__actions button:active {
   background-color: #E1E1E1;
 }
+.comments .comment__icon {
+  filter: opacity(0.5);
+}
 
 .footer {
   color: #ffffff;

@@ -315,6 +315,10 @@ button {
                 }
             }
         }
+
+        &__icon {
+            filter: opacity(0.5);
+        }
     }
 
 }

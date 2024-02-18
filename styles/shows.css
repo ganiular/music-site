@@ -255,6 +255,8 @@ button:hover {
 .comments .comment__actions button {
   background-color: unset;
   color: #AFAFAF;
+  display: flex;
+  align-items: center;
 }
 .comments .comment__actions button:hover {
   background-color: #FAFAFA;
