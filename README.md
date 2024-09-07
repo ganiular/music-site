@@ -11,5 +11,8 @@ Packages:
 -   Axios - For API resquest
 
 Pages:
- 1. Musician Gallery and Booking
+ 1. Musician About, Gallery and Post comment
  2. Musician Shows and Playlist
+
+Tablet View:
+<img src="127.0.0.1_5500_.png">
