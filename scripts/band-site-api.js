@@ -36,4 +36,4 @@ class BandSiteApi {
     }
 }
 
-const siteApi = new BandSiteApi("");
+const siteApi = new BandSiteApi("81296345-1194-402a-b4e9-e8acadd42a14");
